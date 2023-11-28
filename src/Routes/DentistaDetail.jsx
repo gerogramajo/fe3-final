@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useTheme } from '../Context/ThemeContext';
+import '../Css/DentistaDetail.css'
 
 const DentistaDetail = () => {
+  const { themeState } = useTheme();
   const { id } = useParams();
   const [dentista, setDentista] = useState(null);
 
@@ -20,7 +23,7 @@ const DentistaDetail = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className={`dentista-detail-container ${themeState.isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
       <h1>Detalle del Dentista</h1>
       {dentista ? (
         <div>

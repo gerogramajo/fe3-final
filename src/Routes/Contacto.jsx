@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import '../Css/Contacto.css'; // Importa tus estilos
+import { useTheme } from '../Context/ThemeContext';
 
 const Contacto = () => {
+  const { themeState } = useTheme();
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -29,7 +32,7 @@ const Contacto = () => {
   };
 
   return (
-    <div className="contacto-container">
+    <div className={`contacto-container ${themeState.isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
       <h1 style={{paddingBottom: 50}}>Contacto</h1>
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="input-group">

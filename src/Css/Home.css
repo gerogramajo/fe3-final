@@ -38,3 +38,53 @@
   .favButton:hover {
     background-color: #1565c0; /* Color más claro al pasar el ratón */
   }
+
+  /* Home.css */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff; /* Fondo blanco por defecto */
+  color: #000; /* Texto negro por defecto */
+}
+
+.light-theme .card {
+  background-color: #fff; /* Mantén el fondo blanco en tema claro */
+  color: #000; /* Mantén el texto negro en tema claro */
+}
+
+.light-theme .card .detailLink {
+  color: #000; /* Cambia el color del enlace a negro en tema claro */
+}
+
+.dark-theme .card {
+  background-color: #333; /* Fondo oscuro en tema oscuro */
+  color: #fff; /* Texto blanco en tema oscuro */
+}
+
+.dark-theme .card .detailLink {
+  color: #fff; /* Cambia el color del enlace a blanco en tema oscuro */
+}

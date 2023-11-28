@@ -22,15 +22,14 @@ const Card = ({ name, username, id }) => {
 
   return (
     <div className="card">
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <p>Username: {username}</p>
-      <p>ID: {id}</p>
-
-      {/* Link a la página de detalle del dentista */}
-      <Link to={`/dentist/${id}`} className="detailLink">Ver Detalle</Link>
-
-      {/* Botón para agregar a favoritos */}
-      <button onClick={addFav} className="favButton">Add fav</button>
+      <button onClick={addFav} className="favButton">
+        Add fav
+      </button>
+      <Link to={`/dentist/${id}`} className="detailLink">
+        Detalles
+      </Link>
     </div>
   );
 };

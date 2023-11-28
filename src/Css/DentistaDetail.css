@@ -1,0 +1,42 @@
+
+.dentista-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .dentista-detail {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .dark-theme .dentista-detail {
+    background-color: #333; /* Fondo oscuro en tema oscuro */
+    color: #fff; /* Texto blanco en tema oscuro */
+  }
+  
+  .dentista-detail h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .dentista-detail p {
+    margin-bottom: 8px;
+  }
+  
+  .dentista-detail a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .dentista-detail a:hover {
+    text-decoration: underline;
+  }
