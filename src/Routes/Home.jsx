@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useData } from '../context/DataContext';
-import Card from '../components/Card';
+import { useData } from '../Context/DataContext';
+import Card from '../Components/Card';
 
 const Home = () => {
   const { data, setData } = useData();
