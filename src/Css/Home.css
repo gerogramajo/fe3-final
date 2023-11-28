@@ -26,14 +26,15 @@
   }
   
   .favButton {
-    background-color: #4285f4;
-    color: #fff;
+    background-color: #1877f2; /* Color azul de Facebook */
+    color: #fff; /* Texto blanco */
     border: none;
     padding: 8px;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
   }
   
   .favButton:hover {
-    background-color: #0066cc;
+    background-color: #1565c0; /* Color más claro al pasar el ratón */
   }

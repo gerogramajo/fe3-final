@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Css/Contacto.css'; // Importa tus estilos
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -28,23 +29,35 @@ const Contacto = () => {
   };
 
   return (
-    <div>
-      <h1>Contacto</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Nombre completo:
-          <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} />
-        </label>
-        <br />
-        <button type="submit">Enviar</button>
+    <div className="contacto-container">
+      <h1 style={{paddingBottom: 50}}>Contacto</h1>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="input-group">
+          <label className="label">Nombre completo:</label>
+          <input
+            type="text"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            className="input"
+          />
+        </div>
+        <div className="input-group">
+          <label className="label">Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="input"
+          />
+        </div>
+        <button type="submit" className="submit-button">
+          Enviar
+        </button>
       </form>
-      {errorMessage && <p>{errorMessage}</p>}
-      {successMessage && <p>{successMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {successMessage && <p className="success-message">{successMessage}</p>}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useData } from '../Context/DataContext';
-import Card from '../components/Card';
+import Card from '../Components/Card';
 
 
 

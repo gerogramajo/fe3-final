@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useData } from '../Context/DataContext';
-
-import '../Css/Home.css'; // Archivo de estilos para Home
-import Card from '../components/Card';
+import { Link } from 'react-router-dom';
+import Card from '../Components/Card';
+import '../Css/Home.css' // Archivo de estilos para Home
 
 const Home = () => {
   const { data, setData } = useData();
@@ -27,6 +27,10 @@ const Home = () => {
           <Card key={dentista.id} {...dentista} />
         ))}
       </div>
+      {/* Botón para redirigir a la página de contacto */}
+      <Link to="/contacto">
+        <button className="contact-button">Ir a Contacto</button>
+      </Link>
     </div>
   );
 };
