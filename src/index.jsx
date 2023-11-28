@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import ReactDOM from 'react-dom';
+import Main from './Main'; // Adjust the path based on your project structure
+import './index.css'; // Import any global styles if needed
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-      <App/>
-  </React.StrictMode>
+    <Main />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-

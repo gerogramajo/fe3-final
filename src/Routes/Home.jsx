@@ -1,17 +1,32 @@
-import React from 'react'
-import Card from '../Components/Card'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React, { useEffect } from 'react';
+import { useData } from '../context/DataContext';
+import Card from '../components/Card';
 
 const Home = () => {
-  return (
-    <main className="" >
-      <h1>Home</h1>
-      <div className='card-grid'>
-        {/* Aqui deberias renderizar las cards */}
-      </div>
-    </main>
-  )
-}
+  const { data, setData } = useData();
 
-export default Home
+  useEffect(() => {
+    // Simulación de llamada a la API
+    const fetchData = async () => {
+      // Usando una URL de prueba para este ejemplo
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      const data = await response.json();
+      setData(data);
+    };
+
+    fetchData();
+  }, [setData]);
+
+  return (
+    <div>
+      <h1>Lista de Dentistas</h1>
+      <div>
+        {data.map((dentista) => (
+          <Card key={dentista.id} {...dentista} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
