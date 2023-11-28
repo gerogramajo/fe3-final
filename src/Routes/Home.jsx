@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useData } from '../Context/DataContext';
-import Card from '../Components/Card';
+
+import '../Css/Home.css'; // Archivo de estilos para Home
+import Card from '../components/Card';
 
 const Home = () => {
   const { data, setData } = useData();
@@ -18,9 +20,9 @@ const Home = () => {
   }, [setData]);
 
   return (
-    <div>
+    <div className="home-container">
       <h1>Lista de Dentistas</h1>
-      <div>
+      <div className="cards-container">
         {data.map((dentista) => (
           <Card key={dentista.id} {...dentista} />
         ))}
