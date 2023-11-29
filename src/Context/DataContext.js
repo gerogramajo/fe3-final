@@ -36,7 +36,7 @@ const DataProvider = ({ children }) => {
   };
 
   return (
-    <DataContext.Provider value={{ data: state.data, favorites: state.favorites, setData, toggleFavorite }}>
+    <DataContext.Provider value={{ data: state.data, favorites: state.favorites, setData, toggleFavorite, dispatch }}>
       {children}
     </DataContext.Provider>
   );
@@ -46,4 +46,7 @@ const useData = () => {
   return useContext(DataContext);
 };
 
-export { DataProvider, useData };
+// Agrega la siguiente línea para exportar useDataDispatch
+const useDataDispatch = () => useContext(DataContext).dispatch;
+
+export { DataProvider, useData, useDataDispatch };

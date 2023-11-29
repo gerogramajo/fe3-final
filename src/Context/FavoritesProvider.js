@@ -1,5 +1,4 @@
-import React from 'react';
-import { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import FavoritesReducer from '../Reducers/FavoritesReducer';
 
 const FavoritesContext = createContext();
@@ -25,7 +24,7 @@ export const FavoritesProvider = ({ children }) => {
   };
 
   return (
-    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
+    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites, dispatchFavorites }}>
       {children}
     </FavoritesContext.Provider>
   );
