@@ -5,6 +5,7 @@ import '../Css/Home.css'
 import { useTheme } from '../Context/ThemeContext';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import axios from 'axios';
 
 const Home = () => {
   const { data, setData } = useData();
@@ -12,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users');
       const data = await response.json();
       setData(data);
     };
