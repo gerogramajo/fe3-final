@@ -13,7 +13,6 @@
     gap: 16px;
   }
   
-  /* Estilos básicos para las cards (puedes personalizar según tus necesidades) */
   .card {
     width: 200px;
     padding: 16px;
@@ -26,20 +25,18 @@
   }
   
   .favButton {
-    background-color: #1877f2; /* Color azul de Facebook */
-    color: #fff; /* Texto blanco */
+    background-color: #1877f2; 
+    color: #fff; 
     border: none;
     padding: 8px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    transition: background-color 0.3s ease; 
   }
   
   .favButton:hover {
-    background-color: #1565c0; /* Color más claro al pasar el ratón */
+    background-color: #1565c0; 
   }
-
-  /* Home.css */
 
 .home-container {
   display: flex;
@@ -67,24 +64,24 @@
 }
 
 .card {
-  background-color: #fff; /* Fondo blanco por defecto */
-  color: #000; /* Texto negro por defecto */
+  background-color: #fff; 
+  color: #000; 
 }
 
 .light-theme .card {
-  background-color: #fff; /* Mantén el fondo blanco en tema claro */
-  color: #000; /* Mantén el texto negro en tema claro */
+  background-color: #fff; 
+  color: #000; 
 }
 
 .light-theme .card .detailLink {
-  color: #000; /* Cambia el color del enlace a negro en tema claro */
+  color: #000; 
 }
 
 .dark-theme .card {
-  background-color: #333; /* Fondo oscuro en tema oscuro */
-  color: #fff; /* Texto blanco en tema oscuro */
+  background-color: #333; 
+  color: #fff; 
 }
 
 .dark-theme .card .detailLink {
-  color: #fff; /* Cambia el color del enlace a blanco en tema oscuro */
+  color: #fff; 
 }

@@ -1,14 +1,32 @@
-import React from "react";
+import React from 'react';
 
-
-const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
-
+const Form = ({ formData, onChange, onSubmit }) => {
   return (
-    <div>
-      <form>
-      </form>
-    </div>
+    <form className="form-container" onSubmit={onSubmit}>
+      <div className="input-group">
+        <label className="label">Nombre completo:</label>
+        <input
+          type="text"
+          name="fullName"
+          value={formData.fullName}
+          onChange={onChange}
+          className="input"
+        />
+      </div>
+      <div className="input-group">
+        <label className="label">Email:</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={onChange}
+          className="input"
+        />
+      </div>
+      <button type="submit" className="submit-button">
+        Enviar
+      </button>
+    </form>
   );
 };
 

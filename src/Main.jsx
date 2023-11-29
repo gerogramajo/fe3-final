@@ -2,23 +2,25 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from './Context/ThemeContext';
 import { DataProvider } from './Context/DataContext';
-import Home from './Routes/Home';
-import Contacto from './Routes/Contacto';
-import DentistaDetail from './Routes/DentistaDetail';
-import Destacados from './Routes/Destacados';
-
+import Home from './Pages/Home';
+import Contacto from './Pages/Contacto';
+import DentistaDetail from './Pages/DentistaDetail';
+import Destacados from './Pages/Destacados';
+import { FavoritesProvider } from './Context/FavoritesProvider';
 
 const Main = () => {
   return (
     <Router>
       <ThemeProvider>
         <DataProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/dentist/:id" element={<DentistaDetail />} />
-            <Route path="/destacados" element={<Destacados />} />
-          </Routes>
+          <FavoritesProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/dentist/:id" element={<DentistaDetail />} />
+              <Route path="/destacados" element={<Destacados />} />
+            </Routes>
+          </FavoritesProvider>
         </DataProvider>
       </ThemeProvider>
     </Router>

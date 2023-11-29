@@ -1,31 +1,25 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { useFavorites } from '../Context/FavoritesProvider';
 
 const Card = ({ name, username, id }) => {
+  const { addToFavorites, removeFromFavorites, favorites } = useFavorites();
 
-  const addFav = () => {
-    // Obtener el array de favoritos actual del localStorage
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const isFavorite = favorites.some((fav) => fav.id === id);
 
-    // Verificar si la card ya está en favoritos por su id
-    const isAlreadyFav = favorites.some(fav => fav.id === id);
-
-    // Si no está en favoritos, agregarla
-    if (!isAlreadyFav) {
-      const newFavorite = { id, name, username };
-      favorites.push(newFavorite);
-
-      // Actualizar el localStorage con la nueva lista de favoritos
-      localStorage.setItem('favorites', JSON.stringify(favorites));
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      removeFromFavorites({ id, name, username });
+    } else {
+      addToFavorites({ id, name, username });
     }
-  }
-
+  };
   return (
     <div className="card">
       <h3>{name}</h3>
       <p>Username: {username}</p>
-      <button onClick={addFav} className="favButton">
-        Add fav
+      <button onClick={toggleFavorite} className={`favButton ${isFavorite ? 'favorited' : ''}`}>
+        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
       </button>
       <Link to={`/dentist/${id}`} className="detailLink">
         Detalles

@@ -19,8 +19,8 @@
   }
   
   .dark-theme .dentista-detail {
-    background-color: #333; /* Fondo oscuro en tema oscuro */
-    color: #fff; /* Texto blanco en tema oscuro */
+    background-color: #333; 
+    color: #fff; 
   }
   
   .dentista-detail h1 {

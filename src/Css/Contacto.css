@@ -1,5 +1,3 @@
-/* Estilos para la página de contacto */
-/* Estilos para la página de contacto */
 .contacto-container {
   display: flex;
   flex-direction: column;
@@ -32,7 +30,7 @@
 }
 
 .submit-button {
-  background-color: #1877f2; /* Color azul de Facebook */
+  background-color: #1877f2; 
   color: #fff;
   border: none;
   padding: 12px;
@@ -42,7 +40,7 @@
 }
 
 .submit-button:hover {
-  background-color: #1565c0; /* Color más claro al pasar el ratón */
+  background-color: #1565c0; 
 }
 
 .error-message,
@@ -54,13 +52,12 @@
 }
 
 .error-message {
-  background-color: #ffcccc; /* Color de fondo para mensajes de error */
-  color: #ff0000; /* Color de texto para mensajes de error */
+  background-color: #ffcccc; 
+  color: #ff0000; 
 }
 
 .success-message {
-  background-color: #ccffcc; /* Color de fondo para mensajes de éxito */
-  color: #00cc00; /* Color de texto para mensajes de éxito */
+  background-color: #ccffcc; 
+  color: #00cc00; 
 }
 
-/* Ajuste para el h1 */

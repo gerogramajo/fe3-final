@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useTheme } from '../Context/ThemeContext';
 import '../Css/DentistaDetail.css'
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const DentistaDetail = () => {
   const { themeState } = useTheme();
@@ -24,6 +26,7 @@ const DentistaDetail = () => {
 
   return (
     <div className={`dentista-detail-container ${themeState.isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
+      <Navbar></Navbar>
       <h1>Detalle del Dentista</h1>
       {dentista ? (
         <div>
@@ -35,6 +38,7 @@ const DentistaDetail = () => {
       ) : (
         <p>Cargando detalles del dentista...</p>
       )}
+      <Footer></Footer>
     </div>
   );
 };

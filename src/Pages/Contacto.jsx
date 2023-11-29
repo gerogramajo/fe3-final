@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import '../Css/Contacto.css'; // Importa tus estilos
+import '../Css/Contacto.css';
 import { useTheme } from '../Context/ThemeContext';
+import Form from '../Components/Form';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const Contacto = () => {
   const { themeState } = useTheme();
@@ -19,13 +22,11 @@ const Contacto = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validaciones
     if (formData.fullName.length < 5 || !formData.email.includes('@')) {
       setErrorMessage('Por favor, verifique su información nuevamente.');
       return;
     }
 
-    // Simulando el envío de datos
     console.log('Datos enviados:', formData);
 
     setSuccessMessage(`Gracias ${formData.fullName}, te contactaremos cuando antes vía mail.`);
@@ -33,34 +34,12 @@ const Contacto = () => {
 
   return (
     <div className={`contacto-container ${themeState.isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
-      <h1 style={{paddingBottom: 50}}>Contacto</h1>
-      <form className="form-container" onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label className="label">Nombre completo:</label>
-          <input
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            className="input"
-          />
-        </div>
-        <div className="input-group">
-          <label className="label">Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="input"
-          />
-        </div>
-        <button type="submit" className="submit-button">
-          Enviar
-        </button>
-      </form>
+      <Navbar></Navbar>
+      <h1 style={{ paddingBottom: 50 }}>Contacto</h1>
+      <Form formData={formData} onChange={handleChange} onSubmit={handleSubmit} />
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {successMessage && <p className="success-message">{successMessage}</p>}
+      <Footer></Footer>
     </div>
   );
 };

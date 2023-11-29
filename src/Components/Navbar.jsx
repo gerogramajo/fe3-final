@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../Context/ThemeContext';
+import '../Css/Navbar.css'; 
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { themeState, dispatch } = useTheme();
+
+  const handleThemeToggle = () => {
+    dispatch({ type: 'TOGGLE_THEME' });
+  };
 
   return (
-    <nav className={`navbar ${theme}`}>
-      <ul>
+    <nav className={`navbar ${themeState.isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
+      <ul className={`navbar-list ${themeState.isDarkTheme ? 'dark-text' : 'light-text'}`}>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -18,7 +23,9 @@ const Navbar = () => {
           <Link to="/destacados">Destacados</Link>
         </li>
         <li>
-          <button onClick={toggleTheme}>Toggle Theme</button>
+          <button className={`${themeState.isDarkTheme ? 'white-button' : 'dark-button'}`} onClick={handleThemeToggle}>
+            Cambiar Tema
+          </button>
         </li>
       </ul>
     </nav>
