@@ -46,7 +46,6 @@ const useData = () => {
   return useContext(DataContext);
 };
 
-// Agrega la siguiente línea para exportar useDataDispatch
 const useDataDispatch = () => useContext(DataContext).dispatch;
 
 export { DataProvider, useData, useDataDispatch };
